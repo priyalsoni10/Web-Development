@@ -1,0 +1,114 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-size: 1.5vw;
+}
+body{
+    font-family: sans-serif;
+    background-color:black;
+    color:white;
+  
+}
+/*main{
+  /*  height: 20em;/*(20*20=400px) */
+ /*   width: 20em;
+  /*  background-color: goldenrod;
+ /*   margin:30px auto;
+ /*   display:flex;
+ /*   align-items: center;
+  /*  justify-content: center;
+    /* flex-direction: column; */
+    /* font-size:20px; */
+  /*  font-size: 1.5vw; /* view port width*/
+/*}*/
+/* #Box{
+    height:5em;/* 1em = 30(font-size 2*20*5=200px) ,(2em=60) ye fontt ke size se calculate hota h agar font size nhi h or  parent me bhi nhi h to by default font-size(16px)hogi*/
+  /*  Width:300px;
+    background-color:teal;
+    color: white;
+    padding:10px 20px;
+    margin:150px auto;
+    display:flex ;
+    align-items:center;
+    justify-content:center;
+    font-size: 2em; /* apne parent ka double size*/
+
+/*} */
+nav{
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction:column ; */
+    position:absolute;
+    width: 100vw;
+    
+}
+nav ul{
+    list-style: None;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;/*2 rem rootem ye page se calculate hota h*/
+}
+nav  h2{
+    font-size: 1.5rem;
+}
+nav ul li{
+    font-size: 1.2rem;
+}
+main{
+height: 100vh;
+width: 100vw;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+background-image: url(https://pngmagic.com/webp_images/exquisite-3d-nature-wallpaper-with-close-up-views-of-wildlife_r8n.webp);
+background-position: center;
+background-size: cover;
+/*background-image: linear-gradient(red green);/*ye background ko multiople color deta h horizontally*/
+/*background-image: linear-gradient(to right ,red green);/*ye background ko multiople color deta h vertically*/
+/* background-img:linear-gradient((to right,rgb(0,288,255),rgb(0,255,208));*/
+}
+#Content{
+    background-color:rgba(0, 0, 0, 0.332);
+    border-radius:30px;
+    padding:5rem 3rem;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+#Content h1{
+    font-size:5rem;
+    margin-bottom: 1.2rem;
+}
+#Content h3 {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+    color:goldenrod;
+
+}
+#Content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color:lightgray;
+    text-align:center;
+}
+#Content button{
+    
+    padding: .75rem 1.25rem;
+    border:none;
+    background-color:goldenrod;
+    color: white;
+    border-radius: 30pc;
+}
+/*Media Query*/
+@media screen and (max-width:1068px){
+    *{
+        font-size: 10px;
+    }
+}

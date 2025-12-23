@@ -1,0 +1,51 @@
+* Basic CSS boilerplate */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+ body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    color:black;
+
+}
+ main{
+    padding: 10px;
+    margin: 50px auto;
+    width: 95%;
+    height: 700px;
+    border: 2px solid black;
+    box-shadow: 0px 2px 5px lightgray;
+    display: flex;
+    justify-content: center; /* main axis me center kr dega */
+    align-items: center; /*cross axis me center kr dega*/
+  } 
+.Box{
+    height: 500px;
+    width: 600px;
+    /* background-image: url(https://images.unsplash.com/photo-1486365227551-f3f90034a57c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmlyZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600); */
+    /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw7Ruc3aDfDuCbY_FFQ-23U1on7qndeh-dNw&s); */
+    background-image: url(https://www.freeiconspng.com/uploads/super-mario-transparent-background-20.png);
+
+    background-position: center;
+    background-size:cover;
+    /* border: 2px solid rgb(231, 47, 99) ; */
+    display:flex;
+    align-items:center; /* cross axis me center kr dega */
+    justify-content: center; /* main axis me center kr dega */
+    font-size: 30px;
+    transition: 0.4s;
+    /* transition: background 0.4s;
+    transition: all 0.4s;*/
+    border: 1px solid gray;
+}
+  .Box:hover{
+          
+          /* box-shadow:0px 5px 10px  red; */
+          /* filter:drop-shadow(0px 5px 10px black);/*image ke uper shadow aati h */
+          filter:drop-shadow(0px 5px 10px red);/* image ke uper shadow aati h*/
+          /* filter:blur(2px); */
+
+   }
+   

@@ -1,0 +1,58 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    background-color: black;
+    color:white;
+}
+main{
+    height:400px;
+    width: 400px;
+    margin:100px auto;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    background-color:white;
+    color:black;
+
+}
+/*Media Query*/
+/* @media screen and (min-width:768px) and (max-width:1200px){/*screen specify karta hai ki ye rule display screens (jaise mobile, tablet, laptop) ke liye hai.media mtlb jo bhi page pr ya screen(all tag) pr dekhai de rha h vo*/
+   /* main{ /*Ye use hota hai responsive design banane ke liye —yani website har screen size (mobile, tablet, desktop) pe alag tarike se adjust ho jaaye.Agar screen ki width 700px ya usse chhoti hai, to niche likhe CSS rules apply karo*/
+    /* background-color:teal;
+    /*height: 200px;
+   / *width: 200px; */
+  /*  }
+} */
+/*@media screen and (max-width:1200px){/*screen specify karta hai ki ye rule display screens (jaise mobile, tablet, laptop) ke liye hai.media mtlb jo bhi page pr ya screen(all tag) pr dekhai de rha h vo*/
+  /*  main{ /*Ye use hota hai responsive design banane ke liye —yani website har screen size (mobile, tablet, desktop) pe alag tarike se adjust ho jaaye.Agar screen ki width 700px ya usse chhoti hai, to niche likhe CSS rules apply karo*/
+    /* background-color:teal;
+   /* height: 200px;
+    /*width: 200px;
+    }
+} */
+@media screen and (max-width:1768px){/*min width me 768 se size choti hogi to box bda hoga or size bdi hogi to box chota hota h */
+    main{ /*Ye use hota hai responsive design banane ke liye —yani website har screen size (mobile, tablet, desktop) pe alag tarike se adjust ho jaaye.Agar screen ki width 700px ya usse chhoti hai, to niche likhe CSS rules apply karo*/
+    background-color:teal;
+    height: 200px;
+    width: 200px;
+    }
+}
+@media screen and (min-width:568px){/*min width me 768 se size choti hogi to box bda hoga or size bdi hogi to box chota hota h */
+    main{ /*Ye use hota hai responsive design banane ke liye —yani website har screen size (mobile, tablet, desktop) pe alag tarike se adjust ho jaaye.Agar screen ki width 700px ya usse chhoti hai, to niche likhe CSS rules apply karo*/
+    background-color:goldenrod;
+    height: 200px;
+    width: 200px;
+    }
+}
+
+@media print and (min-width:768px){
+    main{/*Ye use hota hai jab hum apni webpage ko print karte hain. Agar print karte waqt page ki width 700px ya usse chhoti hai, to niche likhe CSS rules apply karo*/
+        background-color: goldenrod;
+    }
+}

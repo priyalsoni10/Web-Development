@@ -1,0 +1,130 @@
+ *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      --myColor:rgb(246, 6, 114)/* global variable h lhi bhi access kr skte h*/
+ }
+ body{
+        font-family: sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    #Box{
+       /* --myColor:rgb(246, 6, 114);/* variable */
+        width: 300px;
+        height: 300px;
+        background-color:teal;
+        margin: 100px auto;
+       /* border-top: 5px solid rgb(246, 6, 114);
+        transform-origin:bottom center ;
+       /* animation: Rotate 2s 5 ;/* keyframe ka or kitne second tk rotate krna or kitne bar krna h*/
+      /*  animation: Rotate 2s infinite ;/* keyframe ka or kitne second tk rotate krna or kitne bar krna h*/
+       /*    animation: Rotate 2s infinite 3s ;/*rotate iteration(infinite) animation-delay(3s) */
+       animation:Rotate;   
+       animation-duration:60s ;      
+       animation-iteration-count:5;  
+      /* animation-timing-function:linear;/* speed control(constant)*/   
+      /* animation-timing-function:ease;/* satrt and ending slow and middle (by default)*/    
+      /* animation-timing-function:ease-in;/*start slow hoga end tk aate aate fast ho jaega*/
+      /* animation-timing-function:ease-out;/*start fast hoga or end tak aate aaate slow ho jaega */
+         /* animation-timing-function:ease-in-out;Start slow  mid fast and then slow ending */
+        animation-timing-function:steps(60);/**/
+        animation-delay:2s; 
+       background-color:var(--myColor);/*box me bnaya h variable to box me ya box ke child me hi chalenga*/
+
+    }
+    @keyframes Rotate {
+        from{
+            transform: rotate(0deg);    
+        }
+        to{
+            transform: rotate(360deg);
+        }
+        
+    }
+     @keyframes SlideRight {
+        from{
+            transform:translateX(-100px) ;
+        }
+        to{
+            transform:translateX(0px) ;
+        }
+        
+    }@keyframes SlideBottom {
+        from{
+            transform:translateY(-100px) ;
+        }
+        to{
+            transform:translateY(0px) ;
+        }
+        
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        position:absolute;/* main ke upper aa jaegi nav bar*/
+        color:white;
+        width:100vw;/* viewport width ka 100% */ 
+    }
+    
+    nav h2{
+        animation: SlideRight 1s ease-in-out ;
+    }
+    nav ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+        user-select: none;/* text select nhi hoga */
+    }
+    nav ul li{
+        cursor: pointer;
+        animation: SlideBottom var(--t) ease-in-out ;
+    }
+    
+    main{
+        height: 100vh;
+        background-image: url(https://images.stockcake.com/public/c/6/e/c6e26f69-22b7-4c89-9c90-39c7ec514bee_large/moonlit-mountain-panorama-stockcake.jpg);
+       background-position:center;
+       background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+      /*  flex-direction: column;/*default row hota h isse column me change ho jaega */
+    }
+    #Content{
+        width:75%;
+        height: 45%;
+        /* border: 5PX solid white; */
+        border-radius: 3px; 
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;/*(kis taraf(side) ko ek line me krna h )default row hota h isse column me change ho jaega */
+        
+    }
+    #Content h1{
+        font-size: 50px;
+        color:white;
+      
+        margin-bottom: 20px;
+    }
+    #Content p{
+        font-size: 25px;
+        margin: 30px;
+        color: rgb(16, 16, 16);
+    }
+    #Content button{
+        padding: 10px 20px;
+        background-color:rgb(126, 174, 226);
+        color:white;
+        border:none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+   
