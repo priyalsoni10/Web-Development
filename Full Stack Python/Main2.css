@@ -1,0 +1,122 @@
+/* Basic CSS boilerplate */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+ body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    color:black;
+
+}
+ main{
+    margin: 50px auto;
+    width: 95%;
+    height: 700px;
+    border: 2px solid black;
+    box-shadow: 0px 2px 5px lightgray;
+    display: flex;
+    justify-content: center; /* main axis me center kr dega */
+    align-items: center; /*cross axis me center kr dega*/
+
+    /* display: flex;
+    /* align-items: stretch; stretch se dono box ki height same ho jati h (height nhi dete h) stretch nhi lekhege to bhi by default yhi hogaa  */
+    /*justify-content:space-between;
+    align-items: start;
+    flex-wrap: wrap; /* jb screen choti hogi to box niche chala jaaega  */
+    /*flex-wrap: wrap-reverse; /* jb screen choti hogi to box niche chala jaaega but reverse order me  */
+    /*gap:10px; /* dono me space dega horizontally or vertically  */
+    /*padding: 10px; */
+ /*flex-direction: column;/* ye box ke andar content ko column me arrange karega (by default row hota h) */
+  /*  flex-direction: row-reverse; /* ye box ke andar content ko row me arrange karega but reverse order me (by default row hota h) */
+    /* flex-direction: column-reverse; */
+/* justify content main axis(jis direction me item ho) or align item cross axis me */
+}
+.Box{
+    height: 500px;
+    width: 600px;
+    /* flex:1; */
+    background-color: rgb(231, 47, 99);
+    /* background-image: url(https://images.unsplash.com/photo-1486365227551-f3f90034a57c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmlyZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600); */
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw7Ruc3aDfDuCbY_FFQ-23U1on7qndeh-dNw&s);
+    background-position: center;
+    background-size:cover;
+    /* border: 2px solid rgb(231, 47, 99) ; */
+    display:flex;
+    align-items:center; /* cross axis me center kr dega */
+    justify-content: center; /* main axis me center kr dega */
+    font-size: 30px;
+    color:white;
+    transition: 0.4s;
+    /* transition: background 0.4s;
+    transition: all 0.4s;*/
+    border: 1px solid gray; 
+
+   
+    /*flex:1; /* ye box ko equal space dega */
+   /* min-width: 200px; /* box ki minimum width set krne k liye  */
+   /* max-width: 400px; /* box ki maximum width set krne k liye  */
+    /* flex-grow:  1; grow se box container ki available space ko le leta h(cointainer me extra space ho to kounsa item  kitna bdega(grow) vo btataa h)  */
+    /* flex: shrink 1; shrink se box container ki available space ko chhota kr deta h (container me space kam pad jaye, to kaunsa item kitna chhota (shrink) hoga.) */
+
+}
+/*.Box:nth-child(1){/* first child select krne k liye */
+    
+    /*align-self:end; /* ye particular box ko cross axis me alag align kr dega  */
+    /*background-color:goldenrod;
+    float:right;
+   flex:0.5; box ki width container ki width ka 50% ho jaaegi
+} */
+/*.Box:nth-child(2){/* first child select krne k liye */
+  /*  background-color:rgb(239, 28, 98);
+    /*align-self: center;*/
+    /* float:right; */
+    /* flex:0.25; box ki width container ki width ka 50% ho jaaegi*/ 
+/*}*/
+/*.Box:nth-child(3){/* first child select krne k liye 
+    background-color:goldenrod;
+    /* flex:0.25; box ki width container ki width ka 50% ho jaaegi 
+} */
+ /*.Box:hover{
+   /* /* transform: translateX(100px); */
+    /* transform: translateY(100px); */
+    /* transform:translateX(100px) translateY(100px); */
+    /* transform: scale(0.9);/* box ko 10% bda kar dega hover pr */
+    /* transform: scaleX(0.9);/*box ko 10% bda kar dega hover pr */
+    /*transform: scaleY(0.9);/* box ko 10% bda kar dega hover pr */
+   /* transform: rotate(360deg);
+   /* transform: rotate(0.25turn);/* 1 turn = 360 deg */
+   /* transform: rotate3d(1, 1, 1 ,50deg);
+   /* background-color: goldenrod; */
+/*}*/
+
+/* .Box:active{/* click krne pr ye effect dega */
+   /* /* transform: translateX(100px); */
+    /* transform: translateY(100px); */
+    /* transform:translateX(100px) translateY(100px); */
+    /* transform: scale(0.9);/* box ko 10% bda kar dega hover pr */
+    /* transform: scaleX(0.9);/*box ko 10% bda kar dega hover pr */
+   /* transform: scaleY(0.9);/* box ko 10% bda kar dega hover pr */
+    /*transform: rotate(360deg);
+    transform: rotate(0.25turn);/* 1 turn = 360 deg */
+   /* transform: rotate3d(1, 1, 1 ,50deg);
+    /*background-color: goldenrod; */
+   /* } */
+   .Box:hover{
+          /* background-size: 90%;
+          filter: brightness(50%);
+          filter: contrast(150%);
+          filter:blur(150%);
+          filter:saturate(0.5);
+          filter:grayscale(1);
+          filter:hue-rotate(120deg); */
+          /* box-shadow:0px 5px 10px  red; */
+          filter:drop-shadow(0px 5px 10px black);/*image ke uper shadow aati h
+          filter:drop-shadow(0px 5px 10px black);/* image ke uper shadow aati h*/
+          /* filter:blur(2px); */
+
+   }
+   
+
+

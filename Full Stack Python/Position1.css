@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:sans-serif ;
+    background-color: #f9f9f9;
+    color:black;
+
+}
+/*main{
+    margin:100px auto;/* left right se center me aa jataa h*/
+    /* width: 650px; */
+    /* height: 450px; */
+    /* background-color:teal;   */
+    /* position: relative;/*iske under jo absolute h vo parent se calculate hoga ab */
+/* }*/ 
+#Box{
+    height: 200px;
+    /* width:200px; */
+   background-color: black;
+    /* background-image:url(https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg) ; */
+    /* background-position:center;
+    background-size: cover; */
+    /* margin-top: 150px;/* hmesha margin se box move shi nhi hota */
+    /*position:relative;/*black box jha vo abhi h uski current position se shift hoga agar hum kehte to overlap krta*/
+    /* top:50px; */
+   position: absolute;/*ab ye box apne parent ke hisab se position lega  height na do to gayab ho jaata h or width na do to parent pr spread ho jaata h usko parent se koe  mtlb nhi h parent ke uper overlap kr rha h or calculate bhi page se hogi*apne nearest relative ansister: aisa koe parent jo relative ho*/
+    /* left:-50px ;
+    /*bottom:50px ;/* top se 50px upper shift hoga kyoki usne top ko bottom me consider keya h only bock tag me aisa hoga*/
+    /* border-radius: 50%; */
+   bottom: 10px;/* absolute me page ke bottom se hoga*/
+  right: 10px ;/*absolute me page ke right se hoga*/
+   /* left:10px;/*absolute ya to page se calculate hota h ya parent se jiski position relative hona  chahea */
+    font-size: 40px;
+    color:white;
+    padding: 20px;
+    color:white;
+}
+p{
+    padding: 20px;
+    background-color: sandybrown;
+    color:red;
+}
+#Box1{
+    height:200px;
+    width:200px; 
+    /* height:50px;
+    width:50px;
+    border-radius: 50%; */
+    padding:20px;
+    background-color:teal;
+    color:white;
+    font-size:40px;
+    /* position:relative;
+    left:150px;*/
+   /* position: absolute;/*overlap ho rha h kyoki vo upper aa jaeag width nhi de to fel jata or scroll to ho hi rha h*/;
+   /*position :static /* by default h iska mtlb jha h vhi rhne do or position htane ke leye use kr skte h   */
+   /* position: fixed;/* absolute jaise similar properties h yeh page ke hisab se position lega chahe scroll kr lo bs iski position fix rhegi screen pr*/
+   /* right: 50px;
+   bottom: 20px; */
+   position:sticky;/*yeh tabhi kaam krta h jab hum scroll krte h yeh apne parent ke andar hi rehta h*/
+   top:10;/*jab hum scroll krenge to yeh top se chipka rhe scroll krege to 10 px ki gap ho jaegi jb hum top pr phuchenge*/
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 10px 20px;
+    position: absolute;
+    width: 100vw;/* viewport width ka 100% */
+    color:white;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap:20px;
+}
+    
+main{
+    height:100vh;/* viewport height ka 100%*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    flex-direction: column;/*default row hota h isse column me change ho jaega */
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1C1f96KCdmx9NqQeYjWJX8V5E3q39r0Budg&s);
+    background-position: center;
+    background-size: cover;
+}

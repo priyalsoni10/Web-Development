@@ -1,0 +1,180 @@
+p{
+    color:skyblue;
+    font-size:20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+ 
+ h1{
+    background-color: black;
+    color:rgb(255, 99, 71);
+    font-size:30px;
+    font-family: 'Verdana';
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    text-decoration: line-through underline overline ;/* underline:underline hota h ,line-through: text ke uper line aati h(cut keya hua) ,over line : text ke uper underline hote h(uper-border) */ 
+    text-decoration-color:rgb(242, 117, 117) ;
+    text-decoration-style:dotted ;
+    text-transform: capitalize;
+    padding:10px;/* box ke under ki space padding hota h*/
+    margin: 10px;/* box ke bahar ki space margin hota h*/
+    padding-top: 30px;/* padding left,right top ,bottom khi se bhi de skte h*/
+    margin-left: 20px;/*  margin left,right top ,bottom khi se bhi de skte h*/
+    padding:10px 20px;/* top-bottom 100px left-right 200px */
+    margin:50px 100px;/* top-bottom 50px left-right 100px */
+    padding: 20px 40px 60px 80px;/* top,right,bottom,left */
+    margin: 10px 20px 30px 40px;/* top,right,bottom,left */
+    padding: 10px 20px 30px;/* top 100px,right-left 200px,bottom 300px */
+    margin:10px 20px 30px;/* top 100px,right-left 200px,bottom 300px */
+}  
+
+#Box{
+    color:black;
+    /* background-color:goldenrod; */
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjPgXIO3vMFmELZUYWBqZIWb0FkK-cGSJXg&s) ;
+    background-size: cover;/* image ko pura box me fit krne k liye */
+    height: 200px;
+    width: 300px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-align: center;
+    padding-top:50px;
+}
+body{
+    background-color: rgb(252, 238, 238);
+    color:rgb(86, 85, 85)
+}
+
+#Box1{
+   height:300px;
+    width:300px;
+    background-color:rgb(245, 75, 109);
+    margin-top: 100px;
+    box-shadow:5px 5px 15px 0px rgba(0,0,0,0.75);/* x-axis,y-axis,blur radius,spread radius,color */
+    /* box-shadow:10px 10px 5px 0px rgba(0,0,0,0.75); (left-right 5px,top-bottom 5px spread2px radius 0px color) 
+    box-shadow:inset 10px 10px 5px 0px rgba(0,0,0,0.75); */ /* inset se shadow box ke andar hota h 
+    (-5px left,+5px right,-5px top, +5px bottom)*/ 
+      
+}
+#Box2{
+    height:400px;
+    width: 300px;
+    background-color: white;
+    margin-top: 100px;
+    box-shadow: 0px 2px 5px black
+}
+#First{
+    height:250px;
+    width: 300px;
+    background-image: url(https://cdn.dribbble.com/userupload/22229123/file/original-a21a72a76f11c88c4695974e814fbedc.gif);
+    background-position: center;
+    background-size: cover;
+}
+#Second{
+    height:150px;
+    width: 300px;
+    padding-top: 4px;
+    padding-left: 2px;
+
+}
+input{
+    padding: 2px 2px;
+    border-radius: 6px;
+    
+}
+#SignIn{
+    background-color:rgb(247, 96, 96);
+    color: white;
+    padding:3px 7px ;
+    border:none;
+    border-radius: 20px;
+}
+#SignUp{
+    background-color:rgb(108, 193, 238);
+    color: white;
+    padding:3px 7px ;
+    border:none;
+    border-radius: 20px;
+}
+body{
+    background-color: white;
+    color:black;
+    font-family: sans-serif;
+}
+#Box3{
+ height: 300px; /*height h isleye block jaisa behave krega*/
+ /* width:  300px; width nhi dege to  inline jaisa behave krega div me height ya width nhi dete h to pura page me spread ho jaaata h or inline me height ya width nhi hote h */ 
+ background-color:black;
+ color:  white;
+ padding: 20px;
+ font-size: 30px;
+ Margin:20px;
+/*display:inline; div block tag hota h but css me inline dene ki vagah sse dono behavior aaege */
+ display:inline-block;/* inline-block me dono ka behavior hota h (inline or block) */
+  /* display:none ;page pr show nhi hona chahea(mtlb delete ho gya h) */
+ /* visibility: hidden; mtlb h vhi pr dekh nhirha h   */
+}
+#Box4{
+ height: 300px;
+ /* width:  300px; */
+ background-color:black;
+ color: white;
+ padding: 20px;
+ font-size: 30px;
+ Margin:20px;  
+ display:inline-block;
+}
+main{
+    height:600px ;
+    border:3px solid black;
+    display: flex;/*jha flex lekha h vha change nhi hoga uske child me changes hoga flex se sb ek hine me aata hor height width bhi de skte h*/
+    align-items:center;/* (vertically changes hota h)(start center end)*/
+    justify-content:center;/* (horizontal changes hota h)(start center end space-between space evenly) */
+/* space-between: teno ke bech me equal space aa jaegaor alg alg kone me ho jaege teno(left right center me)
+spaace-evenly:teno ke bech me or dono side equal space aa jaega but ye paas me hi rhege (left right me jitne space h uske barabar space bech me h )
+space-around:teno ke bech me equal space aa jaega but dono side thoda kam space hoga(left right me jitne space h uske double space bech me h )
+*/
+}    
+#Box5{
+    height: 150px;
+    width:  150px;
+    background-color:rgb(248, 104, 104);
+    color:white;
+    /* display:inline-block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Box6{
+    height: 150px;
+    width:  150px;
+    background-color:teal;
+    color:white;
+    /* display:inline-block; */
+}
+#Box7{
+    height: 150px;
+    width:  150px;
+    background-color:goldenrod;
+    color:white;
+    /* display:inline-block; */
+}
+nav{
+    background-color: black;
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+nav ul{
+    list-style:none;/** decimal,lower-roman,upper-roman,lower-alpha,upper-alpha,circle,square,disc*/
+    /* lower-alpha:unotrdered list hote hue bhi counting aayi h (a,b,c,d,e)  
+    lower-roman:ul hote hue bhi (i,ii,iii,iv,v)
+    */
+    /* border: 2px solid white; */
+    width: 350px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}

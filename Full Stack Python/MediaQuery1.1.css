@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    background-color: black;
+    color:white;
+}
+nav{
+    background-color: white;
+    color:black;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    height:60px;
+}
+#SearchBar{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+#SearchBar input{
+    width: 100%;
+    padding: 10px 20px;
+    border:1px solid gray;
+}
+#SearchBar button{
+    padding: 10px 20px;
+    background-color:black;
+    color:white;
+    border:none;
+}
+
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap:10px;
+}
+
+
+main{
+    height:calc(100vh - 60px);
+    background-color:#191544;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+#First{
+    height: 100%;
+    width:50%;
+    background-image: url(https://cdn.dribbble.com/userupload/21945830/file/original-52e7b2882b7eea2a1b3bb6fce497643b.gif);
+    background-position: center;
+    background-size: cover;
+}
+#Second{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#Content{
+    padding: 0 50px;
+    display: flex;
+    text-align:center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+#Content h1{
+    font-size:55px;
+    margin-bottom: 20px;
+}
+#Content h3{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#Content p{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+#Content button{
+    padding: 10px 20px;
+    border:none;
+    background-color:white;
+    
+    border-radius: 30px;
+}
+@media screen and (max-width:768px){/*min width me 768 se size choti hogi to box bda hoga or size bdi hogi to box chota hota h */
+   nav{ /*Ye use hota hai responsive design banane ke liye —yani website har screen size (mobile, tablet, desktop) pe alag tarike se adjust ho jaaye.Agar screen ki width 700px ya usse chhoti hai, to niche likhe CSS rules apply karo*/
+       height:fit-content; /*jb chota kr rhe h tb fit  content krke jitne jarurat h lelena height vrna  page bda h to fix h 60px*/  
+       flex-direction:column;
+       row-gap: 20px;
+    }
+    #SearchBar{
+        width: 85%;
+    
+}
+main{
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 50px 10px;
+}
+#First,#Second{
+    width: 100%;
+
+}
+}
+@media screen and (max-width:568px){/*min width me 768 se size choti hogi to box bda hoga or size bdi hogi to box chota hota h */
+   nav ul{ /*Ye use hota hai responsive design banane ke liye —yani website har screen size (mobile, tablet, desktop) pe alag tarike se adjust ho jaaye.Agar screen ki width 700px ya usse chhoti hai, to niche likhe CSS rules apply karo*/
+       flex-direction: column;
+       row-gap: 20px;
+      
+    }
+    #SearchBar{
+        width: 85%;
+        flex-direction: column;
+        row-gap:  10px; 
+    
+}
+#SearchBar button{
+        width: 100%;
+        
+}
+#Content h1{
+    font-size:30px;
+}
+#Content h3{
+    font-size:20px;
+}
+}
+
