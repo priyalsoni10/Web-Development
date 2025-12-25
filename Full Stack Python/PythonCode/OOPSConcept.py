@@ -440,9 +440,203 @@ p1.changeName("Rahul Kumar")
 print(p1.name)   # Rahul Kumar  ,Rahul 
 # print(Person.name)   # Anonymous  
 print(Person.name)   # (Rahul Kumar -> Person.name = name  ne change krdeya h ),Rahul
+# ------------------------------------------
+"""Property Decorator -> We use @property decorator on any method in thee class to use the mthod as a property.  
+@property ek decorator hai jo method ko attribute ki tarah use karne deta hai.
+Matlab: function ko bina () lagaye access kar sakte ho.
+Kyun use karte hain @property?
+Data ko protect (encapsulation) karne ke liye
+Validation lagane ke liye
+Code ko clean & readable banane ke liye
+Future me logic change ho, user code na toote
+Property decorator allows us to define getter and setter methods while accessing them like attributes.
+getter and setter method
+"""
+class Student:
+    def __init__(self,phy,chem,math):
+        self.phy = phy
+        self.chem = chem
+        self.math = math
+        # self.percentage = str((self.phy+self.chem+self.math)/3) + "%"
+    # def calPercentage(self):    
+        # self.percentage = str((self.phy+self.chem+self.math)/3) + "%"
+    @property 
+    def percentage(self):# kisi bhi parameter me change hoga change automatically reflect hoga 
+        return str((self.phy + self.chem + self.math)/3) + "%"   
+st1 =Student(89,98,78)  
+# print(st1.percentage) #88.33333333333333%  
+# st1.math =  87
+# print(st1.math) # 87 new mark
+# print(st1.percentage) #  88.33333333333333%  
+# st1.calPercentage()
+# print(st1.percentage) # 91.33333333333333%
+print(st1.percentage) #88.33333333333333%  
+st1.math =  67
+print(st1.math) # 67 new mark
+print(st1.percentage)  # 84.66666666666667% # is function ko as a attribute call kya h using property decorator ki help se 
 
-print("hello")
+# ---------------------------------------------
+class Student:
+    def __init__(self, marks):
+        self._marks = marks
 
+    @property
+    def marks(self):
+        return self._marks
+
+    @marks.setter
+    def marks(self, value):
+        if value < 0:
+            print("Invalid marks")
+        else:
+            self._marks = value
+s = Student(80)
+s.marks = 95     # setter call
+print(s.marks)   # getter call
+
+# ----------------------------------------
+""" Polymorphism : poly-> many ,morph -> forms
+Operator Overloading
+When the same operator is allowed to have different meaning according to the context
+Operator and dunder functions
+a+b # addition -> a.__add__(b)
+a-b # substration -> a.__sub__(b)
+a*b # multiplication -> a.__mul__ (b)
+a/b # division -> a.__truediv__(b)
+a%b # addition(modulas) -> a.__mod__(b)
+Polymorphism ka matlab hota hai: “same naam, different kaam”
+Ek hi method / function ko alag-alag class me alag-alag behaviour dikhata hai
+Polymorphism means one interface, many forms.
+Types of Polymorphism (Python me)
+1 Method Overriding
+2 Function Polymorphism
+3 Operator Overloading
+(Compile-time vs Runtime ka strict concept Python me nahi hota)
+Same method name, different behaviour = Polymorphism
+Polymorphism allows the same method name to perform different tasks depending on the object.
+"""
+# implicit overloading ->jo python ne already kr rkhe h 
+print(1+7) # 8 ->addition ->
+print("abc"+ "def") # abcdef -> concatenate
+print([1,2,3]+[4,5,6])#[1, 2, 3, 4, 5, 6] -> merge
+
+class Complex:
+    def __init__(self,real,img):
+        self.real =  real
+        self.img = img
+    def show_number(self):
+        print(self.real , "i +" ,self.img,"j" ) #-> 3i->real no.,4j->imaginery
+    # def add(self,num2):#-> self = num1 h
+    #     newReal =self.real + num2.real 
+    #     newImg =self.img + num2.img 
+    #     return Complex(newReal,newImg)
+    def __add__(self,num2):#-> self = num1 h -> dunder function h # apne class ke leye(+/-)ka mtlb change kr deeya need k according
+        newReal =self.real + num2.real 
+        newImg =self.img + num2.img 
+        return Complex(newReal,newImg)
+    def __sub__(self,num2):#-> self = num1 h -> dunder function h
+        newReal =self.real - num2.real 
+        newImg =self.img - num2.img 
+        return Complex(newReal,newImg)
+    
+       
+num1 = Complex(3,4)
+num1.show_number()   #3 i + 4 j 
+num2 = Complex(1,6)
+num2.show_number()   # 1i + 6 j 
+# num3 = num1.add(num2)
+# num3.show_number() # 4 i + 10 j
+n4 = num1 + num2 
+n4.show_number() #4 i + 10 j
+n5 = num1 - num2
+n5.show_number() # 2 i + -2 j
+
+""" Define a circle class to createe  acircle ewith radius  r using the constructer
+# Define area method of the class which calculates the area of the circle
+# Define a perimeter() method of the class which allows you to calculate the perimeter of the circle"""
+
+class Circle:
+    def __init__(self,radius):
+        self.radius =radius
+    def area(self):
+        return (22/7) * self.radius ** 2  # pie*r (square)
+    def perimeter(self):
+        return 2 *(22/7)  * self.radius   # 2* pie* r 
+c1 = Circle(21)  
+print(c1.area()) #1386.0     
+print(c1.perimeter())  #   132.0
+
+""" Define a Employee classs with attributes rolee department and salary This class showDetails() 
+Create an engineer class that inherit properties from Employee and has additional & attribute name and age
+"""
+class Employee:
+    def __init__(self,role,dept,salary):
+        self.role = role
+        self.dept = dept
+        self .salary = salary
+    def showDetails(self):
+        print("Role : ",self.role)    
+        print("Department : ",self.dept)    
+        print("Salary : ",self.salary)   
+  
+class  Engineer(Employee):
+    def __init__(self,name ,age):
+        self.name = name 
+        self.age = age
+        super().__init__("Engineer","IT","75000")
+eng1 = Engineer("Elon Musk",40)    
+eng1.showDetails()  
+
+""" Create a class called order which storees items and its price
+Use dunder function __gt__() to convey that 
+order1>order2 if price of order 1>  price of order 2
+"""
+class Order:
+    def __init__(self ,item ,price):
+        self.item= item
+        self.price = price 
+    def __gt__(self,ord2):
+        return self.price > ord2.price    
+ord1 = Order("Chips" , 20)
+ord2 = Order("Tea",15)
+print(ord1 > ord2) # True
+ord3 = Order("Samosa" , 20)
+ord4 = Order("Coffee",25)
+print(ord3>ord4) # False
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+         
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
         
