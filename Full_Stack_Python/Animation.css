@@ -1,0 +1,52 @@
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+ }
+ body{
+    font-family: serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+#Box{
+    width:300px;
+    height:300px;
+    background-color: teal;
+    margin:100px auto;/* top bottom 100px amd left right auto*/
+   /* transition: 2s; /* by default ease hota h*/
+   transition-duration:2s; /* by default ease hota h*/
+   /* transition-timing-function:ease-in-out;/* speed control krta h*/  
+  /*  transition-property: background-color; /* konsa property pr apply krna h*/
+   /* transition-property:transform; /* konsa property pr apply krna h*/
+   transition-property:all; /* konsa property pr apply krna h*/
+  }
+/* Pseudo class */
+#Box:hover{ 
+     background-color:goldenrod; /** on hover change color**/
+
+    transform:scale(1.3); /*box thoda bada ho jaega click pr*/
+   /*  transform:scaleX(0.5); /*box thoda bada ho jaega click pr*/
+    /* transform:scaleY(1.1); /*box thoda bada ho jaega click pr*/
+  /* transform:rotate(50deg); /* box thoda ghum jaega click pr*/
+   /* transform:rotateX(50deg); /* box thoda ghum jaega click pr*/
+   /* transform:rotateY(30px); /* box thoda ghum jaega click pr*/
+    /* transform:rotate(50deg);/* box thoda ghum jaega click pr */
+   /* transform:rotate(0.4turn); /* box thoda ghum jaega click pr*/
+   /* transform: translate(30px);   */
+   /* transform: translateX(30px); */
+   /* transform: translateY(30px); */
+
+    /* height: 300px; */
+    /* width: 300px; */
+    /* height: 300px; */
+    /* transition: all 0.5s ease-in-out;all->sab pr apply hoga, 0.5s->time, ease-in-out->speed */
+   /* transform: translateX(30px) translateX(30px); */
+  /* transform:skew(30deg);/* box thoda jhuka jaega click pr*/
+   /* transition: all 0.5s ease-in-out;all->sab pr apply hoga, 0.5s->time, ease-in-out->speed */
+   /* transform:rotate(2turn);/* box thoda ghum jaega click pr*/
+}
+
+/*#Box:active{ 
+     background-color:goldenrod; /* on click change color**/ 
+    /* transition: all 0.5s ease-in-out;all->sab pr apply hoga, 0.5s->time, ease-in-out->speed */
+/*}*/

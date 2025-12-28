@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    color:#333
+}
+#Box{
+    height:150px;
+    width:150px;
+    background-color: black;
+    /* margin:5px ; */
+    /* position:relative; /*jha vo h vha se 100px left shift ho jaega */
+  /* position:absolute;/*jum hum absolute lekhte hto image 3d dimension ki tarah upper aa jata h or uske apne jagah pr kuch or chiz h vo aajate h or parent se koe mtlb nhi h agar width na de to gayab ho jaega or page se calculate hota h */
+  /* position:fixed;/*absolute or fixed  similar h ye bhi page se calculate hota h  ,fixed scroll krne pr fixed rhta h scroll nhi hota h ye  absolute scroll hota h*/
+  position: sticky;/*ye bhi relative jaisa h shift hone pr current position se swift hoga or parent se hi calculate hoga or ye page ke top pr jaega tbye 50px top ke gaap dega or baki scroll hota rhegaa or left se bhi yhi condition h   */
+  top:50px;
+  color:rgb(247, 49, 115);
+   left:100px;
+   /* right:10px;
+   bottom:10px; */
+}
+main{
+    background-color: white;
+    box-shadow: 0px 2px 5px gray;
+  height:500px;
+  width:750px;
+  margin: 150px auto 0;
+  display: flex;
+  justify-content:center;
+  align-items: center;  
+  position:relative;
+  overflow:hidden;
+  
+}
+#blob{
+    height:100%;
+    width:100%;
+ }
+ #Pic{
+   height:100%;
+    width:100%; 
+    position: absolute;
+    object-fit:contain;
+    bottom: 2%;
+} 

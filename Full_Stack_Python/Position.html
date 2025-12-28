@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="Position1.css">
+    <style>
+        /* Position:static(default) ,relative ,absolute,sticky,fixed */
+    .Container{
+        border: 2px solid black;
+        background-color: antiquewhite;
+        height:3444px;
+    }
+    .Box{
+        display:inline-block;
+        border: 2px solid red;
+        width: 150px;
+        height: 150px;
+        margin:2px;
+        }
+    #Box1{ 
+        /* position: static;by default sabhi elements static hote h */
+    }
+    #Box3{ 
+        /* position:relative; /*relative to its normal position and will leave a gap at its normall position(vo apni purani position se 34px shift ho jaega or purani position me gap aa jaeag)*/
+       /* top:34px;
+        left: 34px;*/
+        /* position: absolute;/* relative to the first parent(Container)parent ke relative usne apni parent ki position me shift hua h
+         top:34px;
+        left:34px; */
+        /* position:fixed;/* position the element relative to the browser windows jispr lgaya h vo fixed ho jaeag scroll nhi hoga*/
+        /* right:4px ; */
+        /* bottom: 2px; */ 
+        position: sticky;/*scroll krne pr bhi chipka hua hi rhta h*/
+        top:3px;
+
+    }    
+    </style>
+</head>
+<body>
+    <div class="Container">
+<div class="Box" id="Box1">1</div> <!-- div.Box#Box*4 ye shortcut h div me class or id saath dene ka-->
+<div class="Box" id="Box2">2</div>
+<div class="Box" id="Box3">Chat with us</div>
+<div class="Box" id="Box4">4</div>
+
+</div>
+<main>
+    <div id="Box">
+
+    </div>
+</main>
+</body>
+</html>

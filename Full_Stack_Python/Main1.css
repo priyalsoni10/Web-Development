@@ -1,0 +1,172 @@
+/* Basic boilerplate */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+ body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #eaf1f4;
+    color:black;
+
+}
+ nav{
+    background-color:white ;
+    box-shadow: 0px 2px 5px lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+} 
+#SearchBar{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    /* border:2px solid red; */
+    width: 45%;
+}
+#SearchBar input{
+    width:100%;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border:1px solid lightgray;
+    /* outline: none; */
+}
+#SearchBar button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border:none;
+    background-color: rgb(255, 0, 136);
+    color:white;
+    cursor: pointer;
+    user-select: none;
+    /* outline: none; */
+}
+#SearchBar button:hover{
+    
+    background-color: rgb(227, 0, 121);
+    
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    column-gap: 20px;
+}
+nav ul li{
+    cursor: pointer;
+    user-select: none;
+    /* font-weight: bold; */
+}
+nav ul li:hover{     /*(:)-> pseudo class*/
+    /* cursor: pointer; */
+    /* user-select: none; */
+    /* font-weight: bold; */
+    color: rgb(255, 0, 136) ;
+}
+#HeroSectio{
+    height: 750px;
+    /* width: 100%; */
+    background-image: url(https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* margin-top: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Content{
+    /* border:1px solid red;  */
+    text-align: center;
+    
+}
+#Content h1{
+    /* border:1px solid red;  */
+    /* text-align: center; */
+    font-size: 65px;
+    color: white;
+    /* margin-bottom: 10px; */
+    text-shadow: 0px 2px 2px black;
+}
+#Content h2{
+    /* border:1px solid red;  */
+    /* text-align: center; */
+    font-size: 40px;
+    color: white;
+    margin-top: 5px;
+     text-shadow: 1px 1px 2px black;
+}
+#Content p{
+    /* border:1px solid red;  */
+    /* text-align: center; */
+    /* font-size: 30px; */
+    color: white;
+    margin-top: 0px;
+    /* text-shadow: -1px -1px 2px black; */
+}
+#Content button{
+    padding: 10px 25px;
+    border-radius: 16px;
+    border:none;
+    background-color: rgb(255, 0, 136);
+    color:white;
+    margin-top: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+#Content button:hover{
+    
+    background-color: rgb(227, 0, 121);
+    }
+    #ContainerHeader{
+        padding:10px 20px;
+        margin: 15px;
+        text-align: center;
+    }
+ #Container{
+    display: flex;
+    padding:10px 20px;
+    column-gap: 15px;
+    row-gap: 15px;
+    justify-content: space-evenly;
+    align-items:center; 
+    flex-wrap: wrap; /* ye line cards ko wrap kar degi jab screen choti hogi tab */
+}    
+.Card{
+    background-color: white;
+    box-shadow: 0px 2px 4px lightgray;
+    height: 400px;
+    min-width: 350px;
+    flex:1; /* ye card ko equal space dega */
+    border-radius: 8px;
+    overflow: hidden;/* ye image ko card ke bahar nahi jane dega */
+}
+.Card:hover{
+    box-shadow: 0px 3px 4px gray;
+    cursor: pointer;
+} 
+.Card img{
+    height:65%;
+    width: 100%;
+    object-fit: cover; /* ye image ko distort nahi hone dega(box ko pura bharta h pr thoda crop ho skta h img pr img shi proportion me dekhte h) */
+}
+
+.Card h2{
+    margin: 10px;
+    margin-left: 10px;
+
+}
+.Card p{
+    margin: 10px;
+    margin-left: 10px;
+    }
+ .Card button{
+    margin: 10px;
+    margin-left: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8%;
+    background-color: black;
+    color: white;
+    }
+    
