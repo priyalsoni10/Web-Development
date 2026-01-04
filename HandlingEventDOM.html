@@ -1,0 +1,55 @@
+<!-- Handling Events in the DOM
+Events are actions that occur in the browser, such as clicking a button, hovering over an element, or submitting a form. JavaScript can respond to these events by executing code when they occur.
+
+Event Listeners
+To handle events in the DOM, developers use event listeners. An event listener is a function that waits for a specific event to occur and then executes code when that event happens.
+
+There are several ways to add event listeners:
+1. Using the onclick property of an element.
+2. Using the addEventListener() method.
+
+ClassList Object
+The classList object is a property of DOM elements that provides methods to manipulate the classes of an element. It allows developers to add, remove, and toggle classes easily.
+
+Example:
+<button id="myButton">Click me</button>
+
+<script>
+    let button = document.getElementById("myButton");
+    button.onclick = function() {
+        alert("Button clicked!");
+    };
+</script>
+-->
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Development</title>
+
+    </head>
+    <body>
+        <button onclick="showData()">Save</button>
+    </body>
+    <script>
+        // btn.addEventListener("click", () => { // function ka naam nhi deya h to annonymous function or call back function bhi bolte h
+        //     alert("Button Clicked!");
+        // }); // ye arrow function h
+
+        // function showData(){
+        //     alert("Button Clicked!");
+        // }
+        // let btn = document.getElementById("button");
+        let btn = document.querySelector("button");
+        btn.addEventListener("click", function(){ //anonymous function or call back function
+            alert("Button Clicked!");
+        }); //ye traditional function h isko bhi use kr skte h
+
+
+    </script>
+    </html>
+
+
+    
