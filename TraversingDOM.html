@@ -1,0 +1,56 @@
+<!-- Traversing DOM Elements-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Web Development</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 1320px;
+            margin: auto;
+            position: 30px;
+            border:1px solid black;
+            /* background-color: teal; */
+        }
+    </style>    
+ </head>
+ <body>
+        <div class="main">
+            <h1> Welcome to Web Development </h1>
+            <button>Save</button>
+            <p> This is <b> learning </b> <u> Traversing DOM </u></p>
+            </div>
+ </body>
+ <script>
+    let btn = document.querySelector('button');
+    btn.addEventListener("click",()=>{
+        // console.log(btn.parentNode); // .main div
+        // console.log(btn.childNodes);// NodeList []
+        // console.log(btn.children); // HTMLCollection []
+        // console.log(btn.nextElementSibling);// <p> This is learning Traversing DOM </p>
+        // console.log(btn.previousSibling); // #text
+        // console.log(btn.previousElementSibling);// <h1> Welcome to Web Development </h1>
+        // console.log(btn.parentNode.parentNode);// .main div
+        btn.parentElement.style.backgroundColor = "teal"; // changing background color of parent element
+        btn.previousElementSibling.style.color = "#fff"; // changing color of previous element sibling(h1)
+        // btn.previousElementSibling.style.innerHTML= "This is learning Traversing DOM"; // changing content of previous element sibling(h1)
+        btn.nextElementSibling.style.fontSize = "30px"; // changing font size of next element sibling(p)
+        console.log(btn.nextElementSibling);  // <p> This is <b> learning </b> <u> Traversing DOM </u></p>      
+        console.log(btn.nextElementSibling.children); // HTMLCollection [b, u]       
+        console.log(btn.nextElementSibling.lastElementChild); // <u> Traversing DOM </u>      
+
+
+
+        
+    
+    
+    });
+ </script>
+ </html>
