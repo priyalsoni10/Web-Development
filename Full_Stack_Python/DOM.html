@@ -1,0 +1,79 @@
+<!-- Document Object Model (DOM)
+When  a web page is loaded, the browser creates a Document Object Model of the page. The DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+The DOM is not part of the HTML or JavaScript specifications; it is a separate standard that defines how to access and manipulate documents. The DOM standard is maintained by the World Wide Web Consortium (W3C).
+The DOM represents the document as a tree of nodes. Each node represents a part of the document, such as an element, attribute, or text. For example, consider the following HTML document:
+Why is the DOM important?
+The DOM is important because it allows developers to create dynamic and interactive web pages. By using the DOM, developers can:
+1. Change the document structure: Developers can add, remove, or modify elements in the document.
+2. Change the document style: Developers can change the CSS styles of elements in the document.     
+3. Change the document content: Developers can change the text and other content of elements in the document.
+Selecting DOM Elements
+To manipulate the DOM, developers first need to select the elements they want to work with. There are several methods for selecting DOM elements, including:
+1. getElementById: Selects an element by its ID.    
+2. getElementsByClassName: Selects elements by their class name.    
+3. getElementsByTagName: Selects elements by their tag name.        
+4. querySelector: Selects the first element that matches a CSS selector.    
+5. querySelectorAll: Selects all elements that match a CSS selector.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+</head>
+<body>
+     <h1 id ="heading"> Welcome <u> to </u> </h1>
+     <h1 id ="heading2"> Document Object Model <u>(DOM)</u></h1>
+
+     <div id="res"></div>  
+     <p class="para">Welcome to DOM manipulation</p>
+     <p class="para">This is a sample example of DOM manipulation</p>
+     <p class="para">Learing DOM manipulation</p>
+
+     <h3>WELCOME  </h3>
+     <h3> TO  </h3>
+     <h3> LEARNING DOM  </h3>
+
+</body>
+<script>
+    // Get elements by ID
+    // console.log(window.document);
+    let headingElement = document.getElementById("heading");
+    let resElement = document.getElementById("res");
+    console.log(headingElement); // prints the entire h1 element  -> <h1 id="heading">Document Object Model <u>(DOM)</u></h1>
+    console.log(headingElement.innerHTML); // prints the inner HTML of the h1 element ->Document Object Model <u>(DOM)</u>
+    console.log(headingElement.innerText); // prints the inner text of the h1 element -> Document Object Model (DOM)
+    resElement.innerHTML =  headingElement.innerHTML; // sets the inner HTML of the div element to the inner HTML of the h1 element
+    
+    // Get elements by Tag Name
+    let pElements = document.getElementsByTagName("p");// jb bhi tag name ya class name se element select krte h to vo hamesha HTMLCollection return krta h
+    console.log(pElements); // prints a HTMLCollection of all p elements
+    console.log(pElements[1].innerHTML); // prints the inner HTML of the second p element -> This is a sample example of DOM manipulation
+  
+    // Get elements by Class Name
+    let paraElements = document.getElementsByClassName("para");
+    console.log(paraElements); // prints a HTMLCollection of all elements with class name "para"
+    console.log(paraElements[2].innerText); // prints the inner text of the third element with class name "para" -> Learing DOM manipulation
+    
+    // Query Selector -> returns the first matching element (at a time only one element ko select krta h)
+    let heading = document.querySelector("h1"); // selects the first h1 element agar do h1 h to pehla hi select hoga
+    let heading2 = document.querySelector("#heading2"); // selects the element with id "heading2"
+    let para1 = document.querySelector(".para"); // selects the first element with class name "para"
+    console.log(heading); // prints the first h1 element -> <h1 id="heading">Document Object Model <u>(DOM)</u></h1>
+    console.log(heading2); // prints the h1 element with id "heading2" -> <h1 id="heading2">Document Object Model <u>(DOM)</u></h1>
+    console.log(para1); // prints the first element with class name "para" -> <p class="para">Welcome to DOM manipulation</p>
+    console.log(heading.innerText); // prints the inner text of the h1 element -> Document Object Model (DOM)   
+    console.log(heading2.innerText); // prints the inner text of the h1 element with id "heading2" -> Document Object Model (DOM)
+
+    // Query Selector All -> returns all matching elements
+    let h3Elements = document.querySelectorAll("h3"); // selects all h3 elements(returns NodeList of all matching elements -> similar to HTMLCollection) 
+    console.log(h3Elements); // prints a NodeList of all h3 elements (prints node list using forEach method)
+    h3Elements.forEach(function(item, index){
+        console.log(item); // prints each h3 element
+        console.log(item.innerText); // prints the inner text of each h3 element
+    });
+
+</script>
+</html>

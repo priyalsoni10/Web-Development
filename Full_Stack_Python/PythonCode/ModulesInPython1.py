@@ -86,9 +86,21 @@ while True:
         say("Bye Boss !")
         break
     else:
-        say("Sorry,I don't understand! ") 
-        
+        say("Sorry,I don't understand! ")
+#--------------------------------  
+#  if__name__ = "__main__" module     
              
+print("hii")
 
-
-
+#print(dir()) # ['__annotations__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'add_numbers', 'choice', 'l', 'math', 'pyttsx3', 'random', 'say', 'webbrowser']
+# print(__name__) # __main__ (directly run krne pr (__main__) aega or dusre import krne pr dusri  file ka nam aaega )
+print("This line display all the time")
+def display(name):
+    return name
+def do_something():
+    print("This function is doing something ")
+if __name__=="__main__": # main file me hoga tbhi ye function chalengee import pr nhi chalenge
+  print("This is  ModuleINPython.py")
+  name = input("Enter your name :")
+  print(display(name))
+  do_something()

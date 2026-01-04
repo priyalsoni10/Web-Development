@@ -1,3 +1,4 @@
+// Higher Order Array Methods -> map,filter, reduce
 function Fun(...a){ // ye array bn jaega(...)lgaya h, agr (...) nhi lgy h to ek element aaye error nh aega
     console.log("Hyy",a)// Hyy [4, 7, 10, 5, 6, 3, 4,  9, 2, 1]
   
@@ -87,6 +88,10 @@ function sqr(e){
     return e *e
 }
 //  map function
+// Map()
+// Purpose: Har element par ek function apply karna
+// Return: Naya list/object jisme transformed elements hote 
+// fiter or map me original array change nhi hota h 
 let l = arr1.forEach(sqr); // for each return keye hue data ko nhi smjhta isleye function ki return value nhi dega vhi list de dega jo arr1 me h
 console.log(l); // undefined 
 let j = arr1.map(sqr) // ye return ki hue value ko smjhta h or return krta h
@@ -112,7 +117,30 @@ let u = arr4.map((e) => {
 console.log(u) //[undefined, 7,undefined, undefined,undefined, 9,10]
 console.log('-----------------------');
 
+let nums = [1, 2, 3, 4];
+let squared = nums.map(x => x * x);
+console.log(squared); // [1, 4, 9, 16]
+console.log('-----------------------');
+
+let arr2 = [45,23,21]
+let a1 =arr2.map((value)=>{ // ye function naya array deta h
+    console.log(value)
+    return value + 1
+})
+console.log(a1); // [ 46, 24, 22 ] 
+console.log('-----------------------');
+
+let arr7 = [45,23,21]
+let a3 =arr2.map((value,index)=>{ // ye function naya array deta h
+    console.log(value,index) // index bhi dega
+    return value + 1
+})
+console.log(a1); // [ 46, 24, 22 ]  
+
 // Filter function
+// Filter()
+// Purpose: Elements ko condition ke basis par filter karna
+// Return: Naya list/object jisme sirf condition pass karne wale elements hote hain
 let arr6 = [1,3,14,7,2,8,9,10,4,5]
 let t = arr6.filter((e)=> e>5);
 console.log(t) // [ 14, 7, 8, 9, 10 ] -> only vhi aaege jo bde h 5 se 
@@ -137,17 +165,29 @@ let d = [3,8,6,5,0,3,1,2,7]
 d.map((e,i) => { // array ke sath index bhi mil jaegi
     console .log(e,i);
 }) 
+console.log('---------------------');
+let nums1 = [1, 2, 3, 4, 5];
+let even = nums1.filter(x => x % 2 === 0);
+console.log(even); // [2, 4]
+console.log('-----------------------');
 // Reduce Function
+// Reduce()
+// Purpose: List ke elements ko single value me combine karna
+// Return: Ek single value
 let a = [3,8,6,5,0,3,1,2,7] 
 let sum = a.reduce((e,i) => e+i , 100) // default value = 100 
 console.log(sum); // 135
+console.log('-----------------------');
+let nums2 = [1, 2, 3, 4];
+let sum_all = nums2.reduce((a, b) => a + b, 0);
+console.log(sum_all); // 10
+console.log('-----------------------');
+let  arr8 = [1,2,3,4,5,6]
+let newarr3 = arr8.reduce((h1,h2)=>{
+    return h1 + h2
+})
+console.log(newarr3); // 21
 
-// Function Constructer and OOPS
-function Func(){
-    this.n ="5"
-}
- let f  = new Func();
- console.log(a.n);
 
 
 
