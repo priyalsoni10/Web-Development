@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Web Development</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        h1{
+            text-align: center;
+            padding: 30px 0px;
+        }
+        .faqMid{
+            max-width: 1000px;
+            margin: auto;
+           
+        }
+        .faqItems{
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        .faqItems h3{
+            padding: 15px;
+            position: relative;
+            cursor: pointer;
+            background-color:lightcoral;
+            
+
+
+        }
+        .faqItems h3 span{
+            position: absolute;
+            right: 10px;
+            
+        }
+        .faqItems p{
+            font-size: 18px;
+            line-height: 30px;
+            padding: 15px;
+            display: none;
+        }
+            
+        .showAns {  
+            display: block !important;  /*  !important is used to override any other display property  (pseudo selector(.showfaq) ki priority jyada hoti h class se*/
+        }
+     </style>
+</head>
+<body>
+    <h1> Frequently Asked Questions </h1>
+    <div class="faqMid">
+        <div class="faqItems">
+            <h3> What is Web Development? <span>+</span> </h3>
+            <p> Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network). </p>
+        </div> 
+        
+        <div class="faqItems">
+            <h3> What is HTML  <span>+</span></h3>
+            <p> HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages. </p>
+        </div> 
+        
+        <div class="faqItems">
+            <h3> What is CSS  <span>+</span></h3>
+            <p> CSS stands for Cascading Style Sheets. It is a style sheet language used to describe the presentation of a document written in HTML or XML. </p>
+        </div>
+        
+        <div class="faqItems">
+            <h3> What is JavaScript  <span>+</span></h3>
+            <p> JavaScript is a programming language that enables interactive web pages. It is an interpreted, event-driven, and object-oriented language. </p>
+        </div>
+        
+        <div class="faqItems">
+            <h3> What is DOM <span>+</span> </h3>
+            <p> DOM stands for Document Object Model. It is a programming interface for web documents. It represents the structure of a document and allows programs to modify its content and presentation. </p>
+
+        </div>
+        
+        <div class="faqItems">
+            <h3> What is OOPS in JavaScript  <span>+</span> </h3>
+            <p> OOPS stands for Object-Oriented Programming System. It is a programming paradigm that uses objects and classes to structure code. In JavaScript, OOPS allows developers to create reusable code structures and manage complex applications more efficiently. </p>
+        </div>
+        
+        <div class="faqItems">
+            <h3> What is Factory Function in JavaScript <span>+</span> </h3>
+            <p> A factory function is a function that returns an object without the need for the new keyword. It is a way to create and return objects with specific properties and methods. </p>
+        </div>
+       
+
+    </div>
+
+    
+</body>
+        <script>
+            let allQuestions = document.querySelectorAll('.faqItems h3');
+            // console.log(allQuestions);// NodeList of all h3 elements inside faqItems class
+            allQuestions.forEach( (items,currentIndex) => {
+                // console.log(items,currentIndex);// all h3 element and its index
+                
+                items.addEventListener("click",() => {
+                    // alert(currentIndex);// shows index of clicked question
+                    allQuestions.forEach((heading,i) => {
+                        // console.log(heading);
+                        if(currentIndex != i){
+                            heading.nextElementSibling.classList.remove('showAns');
+                            heading.lastElementChild.innerHTML = "+";
+                        }
+                    })
+                    // console.log(items.nextElementSibling); // p element
+                    // console.log(items.lastElementChild); //  <span>+</span>
+                    // Current question click event - | +
+                    if(items.lastElementChild.innerHTML == "+"){
+                        items.lastElementChild.innerHTML = "-";
+                    }
+                    else{
+                        items.lastElementChild.innerHTML = "+";
+                    } //  <span>+</span>
+                    // Current question click event Ans show | Hide
+                    items.nextElementSibling.classList.toggle('showAns');
+                });
+            });
+  
+        </script>
+</html>
