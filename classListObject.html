@@ -1,0 +1,76 @@
+<!-- ClassList Object
+1. The classList object is a property of DOM elements that provides methods to manipulate the classes of an element. It allows developers to add, remove, and toggle classes easily.
+2. The classList object has several useful methods, including:  
+    - add(className): Adds the specified class to the element.
+    - remove(className): Removes the specified class from the element.
+    - toggle(className): Toggles the specified class on the element. If the class is present, it removes it; if it's not present, it adds it.
+    - contains(className): Returns true if the element has the specified class, and false otherwise.                    
+Example:
+<button id="myButton" class="btn primary">Click me</button> 
+<script>
+    let button = document.getElementById("myButton");
+    // Add a class
+    button.classList.add("active");
+    // Remove a class
+    button.classList.remove("primary");
+    // Toggle a class
+    button.classList.toggle("hidden");
+    // Check if a class is present
+    let hasBtnClass = button.classList.contains("btn"); // returns true 
+-->
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Development</title>
+        <style>
+            .activePara{
+                color:rgb(246, 8, 83);
+                font-size: 30px;
+                background-color: rgb(49, 47, 47);
+                padding:20px;
+            }
+        </style>   
+    </head>
+    <body>
+        <button id="css"> CSS </button>  
+        <button id="addClass"> Add Class</button>
+        <button id="removeClass"> Remove Class</button>
+        <button id="toggleClass"> Toggle Class</button>
+         <p >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates ratione omnis illum quidem aliquam numquam illo debitis iure repellat corporis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates ratione omnis illum quidem aliquam numquam illo debitis iure repellat corporis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates ratione omnis illum quidem aliquam numquam illo debitis iure repellat corporis.
+        </p>
+
+        
+    </body>
+    <script>
+            let btn1 = document.querySelector("#css");// selecting the button with id css and storing it in btn1 variable (button to change css styles of p element)
+            let paraElement = document.querySelector("p"); // selecting the first p element and storing it in paraElement variable
+            btn1.addEventListener("click",()=>{ // adding click event listener to the button    
+                // alert("Button Clicked!");
+                paraElement.style.color = "goldenrod"; // changes the text color of the p element to goldenrod
+                // paraElement.style.fontSize = "25px"; // changes the font size of the p
+                paraElement.style.backgroundColor  = "black"; // changes the background color of the p element to black
+
+            }); 
+            let btn2 = document.querySelector("#addClass");
+            btn2.addEventListener("click", ()=>{ // ye activePara  jo style define ki h usse add kr dega
+                // alert("Add Class Button Clicked!");
+                paraElement.classList.add("activePara"); // adds the class activePara to the p element
+            });
+            let btn3 = document.querySelector("#removeClass");
+            btn3.addEventListener("click", ()=>{ // ye activePara  jo style define ki h usse remove kr dega
+                // alert("Remove Class Button Clicked!");
+                paraElement.classList.remove("activePara");
+            });
+            let btn4 = document.querySelector("#toggleClass");
+            btn4.addEventListener("click", ()=>{ // ye activePara  jo style define ki h usse toggle kr dega(agar add nhi h to add kr dega or add h to remove kr dega)
+                // alert("Toggle Class Button Clicked!");
+                btn4.classList.toggle("activePara");
+                paraElement.classList.toggle("activePara");
+            });
+    </script>
+    </html>
