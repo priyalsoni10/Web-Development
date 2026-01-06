@@ -415,5 +415,116 @@ String.prototype.trueLength = function(){
 anotherUsername.trueLength(); // True length is : 6
 "Priyal".trueLength(); // True length is : 6
 "Soni   ".trueLength(); // True length is : 4
-console.log('------------------------');    
+console.log('------------------------'); 
+
+// Call Method and Bind Method
+function setUsername(username){
+    // complex DB calls
+    this.username = username;
+    console.log("Called...");
+}
+function createUsername(username, email, password){
+    // setUsername.(username); // ye call ho hi nhi raha h kyunki isme this set nhi hoga to undefined hi rahega or .call bhi nhi lekha h isse ye call to hua h but  ye run hote h return hone ki jagah iska execution context delete ho rha h   
+    setUsername.call(this, username); // call method se hum function ko call kr skte h or isme hum explicitly this set kr skte h
+    this.email = email;
+    this.password = password;
+
+}
+const user13 = new createUsername("Pari","pari@example.com","12345");
+// console.log(user13); // createUsername { email: 'pari@example.com', password: '12345' } username property nhi aayi kyunki humne this ko set nhi keya h call me
+console.log(user13); // createUsername { username: 'Pari', email: 'pari@example.com', password: '12345' } username property aayi kyunki humne this ko set keya h call me
+console.log("-----------------------------");
+
+// Class in JavaScript(ES6 ke baad ho rha h javascrit me)
+class User12{
+    constructor(username, email,password){
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+    encryptPassword(){
+    return `${this.password}abc`; // abstraction and encapsulation
+} 
+     changeUsername(){
+       return this.username.toUpperCase();          
+    }
+}
+const user14 = new User12("Anurag","anurag@example.com","12345");
+console.log(user14.encryptPassword()); //  12345abc
+console.log(user14.changeUsername()); //  ANURAG
+console.log("-------------------------");
+
+// Behind the scenes 
+function User13(username, email,password){
+    this.username = username;
+    this.email = email;
+    this.password = password;
+}   
+User13.prototype.encryptPassword = function(){
+    return `${this.password}abc`; // abstraction and encapsulation
+}
+User13.prototype.changeUsername = function(){
+    return this.username.toUpperCase();          
+ }
+const user15 = new User13("Anurag","anurag@example.com","12345");
+console.log(user15.encryptPassword()); //  12345abc
+console.log(user15.changeUsername()); //  ANURAG
+console.log("-------------------------");
+// Class Inheritance
+class User14{
+    constructor(username, email){
+        this.username = username;
+        this.email = email;
+    }
+    logMe(){
+        console.log(`Username is ${this.username} and email is ${this.email}`);
+    }
+}
+class Teacher1 extends User14{ // extends se inheritance hota h
+    constructor(username,email,password){
+        super(username,email) // super se parent class ka constructor call hota h
+        this.password = password;
+    }
+addCourse(){
+    console.log(` New Course was added by ${this.username}`);
+}
+}
+const teacher1 = new Teacher1("Anurag","anurag@example.com","12345");
+teacher1.logMe(); // Username is Anurag and email is anurag@example.com 
+teacher1.addCourse(); // New Course was added by Anurag
+const teacher2 = new User14("Priya","priya@example.com");
+teacher2.logMe(); // Username is Priya and email is priya@example.com
+//teacher2.addCourse(); // Error: teacher2.addCourse is not a function kyunki ye User14 class ka object h
+console.log(teacher1 === teacher2);// false
+console.log(teacher1 === Teacher1);// false
+console.log(teacher1 instanceof Teacher1);// true
+console.log(teacher1 instanceof User14);// true
+console.log("-------------------------");
+
+// Static Method(property)
+class User15{
+    constructor(username, email){
+        this.username = username;
+        this.email = email;
+    }
+    logMe(){
+        console.log(`Username is ${this.username} and email is ${this.email}`);
+    }
+    static createId(){ // static method ko hum class ke object se nhi call kr skte h sirf class se hi call kr skte h(is method ka access hr us objecrt ko nhi dena chahte h jo iss class se instanciate hua h  )
+        return '123';
+    }
+}
+class Teacher2 extends User15{ // extends se inheritance hota h
+    constructor(username,email,password){
+        super(username,email) // super se parent class ka constructor call hota h
+        this.password = password;
+    }
+}
+const Priya = new User15("Priyal","priyal@example.com");
+const iphone = new Teacher2("Iphone","iphone@example.com","12345");
+//console.log(Priya.createId()); // 123   
+console.log(User15.createId()); // 123
+// console.log(iphone.createId()); // Error: iphone.createId is not a function
+console.log("-------------------------");
+
 
