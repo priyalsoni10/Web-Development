@@ -74,8 +74,18 @@ const{courseInstructor:instructor} = course // de -structure keya h courseInstru
 console.log(instructor);
 //  React example h
 // const navbar = (props.company) => {
-const navbar = ({company}) => { // de- structure keya gya h
+// const navbar = ({company}) => { // de- structure keya gya h
 
-}
-navbar(company = "ABC")
+// }
+// navbar(company = "ABC")
+
+console.log("---------------------------------");
+
+// JSON
+// json ka data array , object me aata h
+// {
+//     "name": "Abc",
+//     "coursename":"js in hindi",
+//     "price": "free"
+// }
 
