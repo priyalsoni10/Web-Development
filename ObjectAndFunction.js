@@ -58,8 +58,24 @@ console.log('------------------------');
 
 //  global object jo this naam ke variable/propeerty me hota h
 console.log(this);// {} ->node pr  khali object but browser ke  console me khali nhi rhta h window nam ka object me (html ,css or  basic javascript compilation process,browser contol access like camera,location etc  )
+console.log("-------------------------------");
 
+// Object de-structure and JSON API javaScript
 
+const course = {
+    courseName: 'JavaScript',
+    price : "999",
+    courseInstructor:"Hitesh"
+}
+course.courseInstructor
+// const{courseInstructor} = course
+const{courseInstructor:instructor} = course // de -structure keya h courseInstructor ko instructor se
+// console.log(courseInstructor);
+console.log(instructor);
+//  React example h
+// const navbar = (props.company) => {
+const navbar = ({company}) => { // de- structure keya gya h
 
-
+}
+navbar(company = "ABC")
 
