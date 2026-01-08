@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Web Development </title>
+</head>
+<body style="background-color: #414141; color:aliceblue;">
+    <h2> Amazing Images </h2>
+     <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR27_8u197fcZNQz8TeyqmyR_ufQemwvh1jZg&s" alt="Image1"></li>
+            <li><img width="200px" id="photoshop2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR27_8u197fcZNQz8TeyqmyR_ufQemwvh1jZg&s" alt="Image1"></li>
+            <!-- <li><img width="200px" id="photoshop3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR27_8u197fcZNQz8TeyqmyR_ufQemwvh1jZg&s"  alt="Image1"  onclick="alert('Photo Clicked...')" ></li> ye ek feasable approach nhi h jb application scale krega tb problem aaegi -->
+            <li><img width="200px" id="photoshop3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR27_8u197fcZNQz8TeyqmyR_ufQemwvh1jZg&s"  alt="Image1" ></li>
+            <li><img width="200px" id="photoshop4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR27_8u197fcZNQz8TeyqmyR_ufQemwvh1jZg&s" alt="Image1"></li>
+             <li><a style=" color:aliceblue;  "href="https://google.com" id="google"> Google </a> </li>
+        </ul>
+     </div>
+</body>
+<script>
+    //    document.getElementById('photoshop3').onclick = function(){
+    //     alert('Photo Clicked....')
+    //    }
+    //Event-> JavaScript me jitne bhi event h vo sequencially hi run hote h
+    // typeEvents,TimeStamps,defaultPrevented ,target,toElement ,srcElement,currentTarget,clientX,clientY,screenX,screenY,altkey,ctrlkey,shiftkeey,keycode
+    // attachEvent() -> application ko internet explorer pr chalana le leye
+    //jQuery -> .onEventListner()
+    // document.getElementById('photoshop3').addEventListener('click',function(e){
+    //     console.log(e);
+    //     alert('Photo Clicked again')
+    // },false) // kuch aise application jo bina false or true ke nhi chalti h by default false hota h third parameter
+// Event Propagation(true/false)-> Event bubbling(false-> jo jyada use hota h or ye default h) or Event capturing
+//(false condition) ->bubbling up niche se upper ki taraf jaega phle internal print hoga fir jo bhi event add hoga vo (like images id me photoshop 3 bhi h jo images me event se add h or alg se bhi event se add h to internal fir external print hoga)   
+//(true condition) ->capturing jo top se bottom tk chalte phle external event fir internal chalega
+// document.getElementById('images').addEventListener('click',function(e){
+//         console.log('Clicked inside ul');
+//         // alert('Photo Clicked again')
+//     },false) // jb images pr click krenge tb print hoga
+//       document.getElementById('photoshop3').addEventListener('click',function(e){
+//         console.log('Photo Clicked...');
+//         // alert('Photo Clicked again')
+//         e.stopPropagation() // inner element alg reh jae or external element alg reh jae uske leye use  hota isse humara element bubble hoke upper nhi jaega external element pr
+//     },false) // jb specifically photoshop3 pr click krenge tb
+
+//     document.getElementById('google').addEventListener('click',function(e){
+//         e.preventDefault();
+//         e.stopPropagation();
+//         console.log('Google Clicked...');
+//     },false)
+  
+  document.querySelector('#images').addEventListener('click',function(){
+    console.log(e.target);
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG'){
+        console.log(e.target.id);
+        let removeIt =e.target.parentNode
+        removeIt.remove()
+  }
+    
+    // console.log(e.target.parentNode);
+  
+    // removeIt.parentNode.removeChild(removeIt)
+  },false)
+</script>
+</html>
