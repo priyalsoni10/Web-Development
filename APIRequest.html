@@ -1,0 +1,56 @@
+<!-- XML (eXtensible Markup Language) ek data store aur data share karne ki language hai.
+
+➡️ Ye data ko describe karta hai
+➡️ HTML jaisa dikhta hai, lekin web design ke liye nahi, data ke liye hota hai
+
+🔹 XML ka use kahan hota hai?
+
+Data exchange (API, Web services)
+
+Android development (layouts, manifests)
+
+Configuration files
+
+Database se data transfer
+
+SOAP APIs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+</head>
+<body style="background-color: #212121;">
+    0 UNSENT Client has been created .open() not called yet.(0 1 2... ye sari state h)
+    1 OPENED Open() has been called.
+    2 HEADERS_RECEIVED send() has been called , and headers and status are available.
+    3 LOADING Downloading; responsText holds partial data. 
+    4. DONE The operation is complete.
+    
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary' ;
+   const xhr = new XMLHttpRequest();// data request send and receive krne ke leyeau
+   xhr.open('GET',requestUrl);
+// console.log("Here");
+//    console.log(xhr.readyState); // 1 abhi 0 se 1 ho gye h ye continuously change hoti rehte h state ye ek baar hi track krta h changes kon 
+ xhr.onreadystatechange= function(){
+    console.log(xhr.readyState); //  ye continuous track krega changes ke state ko
+    if(xhr.readyState === 4){
+        // const data = this.responseText; // isme github repository ki information jo api se aayi h vo store ho gye h
+        // console.log(this.responseText);
+        const data = JSON.parse(this.responseText); // convert data string to object
+        console.log(data);
+        // console.log(typeof(data)); // string most of the time data string me aata h url se kbhi direct objeect me bhi aajata h
+        console.log(typeof(data)); // object
+        console.log(data.followers);// 53737 -> followers
+    } 
+ }
+ xhr.send();
+
+// console.log debuging tool h jo v8 engine provide krta h ,api access deta h jo c++ me lekhee h(javasvccript,python bhi internally c++ me run krteh)  console log bhi v8 engine(d8console.cc ye console log h) me milta h jo javascript ka runtime deta h
+</script>
+</html>
+
