@@ -1,0 +1,60 @@
+<!-- Javascript -> Synchonous(ek ke baad ek code execute hoga ),single thread (ek hi thread pr  subkuch execute hoga)->(default javascript h)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Web development </title>
+</head>
+<body>
+    <h1> Welcome to Web Page </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+    <!-- <script>
+        // setTimeout(function(){
+        //     console.log("Priyal");
+        // },2000); // ye method h jo api ko call krta or  (2sec ke baad print krega)
+            
+        const sayPriyal = function(){
+            console.log("Priyal");
+        }
+       const changeText = function(){
+        document.querySelector('h1').innerHTML = "Java Script"
+      
+       } 
+        // setTimeout(sayPriyal ,2000); // by reference
+        // setTimeout(changeText ,2000); // by reference
+        const ChangeMe = setTimeout(changeText ,2000); // by reference
+        // clearTimeout(ChangeMe)
+        document.querySelector('#stop')
+        .addEventListener('click',function(){
+              clearTimeout(ChangeMe)
+              console.log("stopped");
+        })
+    </script> -->
+    <script>
+        //    setInterval(function(){
+        //     // console.log("Priyal");
+        //     console.log("Priyal",Date.now());
+        //    },1000)
+    //     const sayDate = function(str){
+    //         console.log(str,Date.now());
+    //     }
+    // const intervalId =  setInterval(sayDate,1000,'hii')
+    // clearInterval(intervalId)
+
+    // for Start
+    document.querySelector('#start')
+        .addEventListener('click',function(){
+            const intervalId =  setInterval(function(){
+                  console.log("Start..");
+            },2000) // hr 2 sec me
+            //   clearTimeout(ChangeMe)
+
+             
+        })
+
+    </script>
+</html>
