@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+</head>
+<body>
+    <h1>Todo App</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="task" placeholder="Task name" required>
+        <input type="text" name="description" placeholder="Task description">
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <strong>{{ task.name }}</strong> - {{ task.description }}
+            </li>
+        {% empty %}
+            <li>No tasks yet</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
