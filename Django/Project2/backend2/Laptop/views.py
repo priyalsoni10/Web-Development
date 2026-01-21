@@ -92,7 +92,7 @@ def updateLaptop(request,id):
 
 
 @api_view(['DELETE']) 
-def deleteLaptop(reequest,id):
+def deleteLaptop(request,id):
     for i in laptopData:
         if i["id"] == id:
             laptopData.remove(i)
