@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    color:#333;
+    background: ghostwhite;
+    font-family: sans-serif;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1.25rem; /*rem-> root em -> html se calculate hota h font size by default 16 h  (0.75rem = 0.75 × 16 = 12px,1.25rem = 1.25 × 16 = 20px)  */
+    box-shadow: 1px 2px 5px lightgray;
+    background-color: white;
+    color:black;
+    position:sticky;
+    top:0;
+
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+    cursor:pointer;
+    user-select: none;
+
+}
+nav ul li:hover{
+    color: rgb(130, 128, 128);
+
+}
+
+main{
+    min-height: 100vh;
+    margin-top: 10px;
+    padding: .5rem .75rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:.75rem;
+}
+
+.newsCard{
+    height: 600px;
+    overflow: hidden;
+    border-radius: 11px;
+    background-color:white;
+    color:black;
+    box-shadow: 0px 2px 4px lightgrey;
+}
+
+.newsCard img {
+    height:60%;
+    width:100%;
+    object-fit: cover;
+}
+
+.newsCard h2 {
+    margin-top: .5rem;
+    margin-left: .75rem;
+    font-size: 1.25rem;
+
+}
+
+.newsCard p {
+    margin-top: .5rem;
+    margin-left: .75rem;
+    font-size: .75rem;
+    color: rgb(50, 49, 49);
+    height:18%;
+    overflow: hidden;
+}
+
+.newsCard button {
+    margin-top: .5rem;
+    margin-left: .75rem;
+    padding: .5rem .75rem ;
+    border: none;
+    background-color:rgb(73, 120, 209);
+    color:white ;
+    border-radius: 11px;
+}
+
+
+
